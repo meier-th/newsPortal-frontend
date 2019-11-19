@@ -1,16 +1,15 @@
-#header-content{
-    width: 80%;
+#login-button {
+    float: right;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+#name-span {
+    float: left;
+    margin-left: 10px;
+    font-size: 30px;
+}
+
+#date-span {
     margin: auto;
-    font-size: 35px;
-    color: darkcyan;
-    background-image: linear-gradient(rgb(186, 248, 230), rgb(251, 255, 206));
-    #timestamp{
-        font-size: 20px;
-        margin-left: 10px;
-    }
-    #login-button {
-        float: right;
-        margin-right: 10px;
-        font-size: 20px;
-    }
 }

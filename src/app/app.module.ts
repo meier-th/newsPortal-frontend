@@ -5,17 +5,30 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './header/header.component';
+import { LoginComponent } from './login/login.component';
+import { MatFormFieldModule } from '@angular/material/form-field'; 
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material'
+import { MatToolbarModule } from '@angular/material'
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatButtonModule,
-    BrowserAnimationsModule
+    MatFormFieldModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatToolbarModule,
+  ],
+  entryComponents: [
+    LoginComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

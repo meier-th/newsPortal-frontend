@@ -1,9 +1,9 @@
-<div id="header-content">
-  <span id="logo" class="menu-items">
-News Portal
-</span>
-<span id="timestamp" class="menu-items">
-{{currentDate | date: 'dd/MM/yyyy'}}
-</span>
-    <button mat-button id="login-button">Log in</button>
-    </div>
+<mat-toolbar color="primary">
+  <span id="name-span">
+    News Portal
+  </span>
+  <span id="date-span">
+    {{currentDate | date: 'dd/MM/yyyy'}}
+  </span>
+    <button mat-button id="login-button" (click)="loginButtonPressed()">Log in</button>
+</mat-toolbar>
