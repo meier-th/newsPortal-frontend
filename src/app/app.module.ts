@@ -4,18 +4,21 @@ import { MatButtonModule } from '@angular/material';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatPaginatorModule} from '@angular/material/paginator';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { MatFormFieldModule } from '@angular/material/form-field'; 
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material'
-import { MatToolbarModule } from '@angular/material'
+import { MatToolbarModule } from '@angular/material';
+import { routingComponents } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    LoginComponent
+    LoginComponent,
+    routingComponents
   ],
   imports: [
     BrowserModule,
@@ -26,6 +29,7 @@ import { MatToolbarModule } from '@angular/material'
     BrowserAnimationsModule,
     MatInputModule,
     MatToolbarModule,
+    MatPaginatorModule,
   ],
   entryComponents: [
     LoginComponent

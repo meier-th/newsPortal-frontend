@@ -1,6 +1,11 @@
+mat-toolbar {
+    display: flex;
+    justify-content: space-between;
+}
+
 #login-button {
     float: right;
-    margin-right: 10px;
+    margin: 0px 10px 0px 10px;
     font-size: 20px;
 }
 
@@ -10,6 +15,23 @@
     font-size: 30px;
 }
 
-#date-span {
-    margin: auto;
+nav a button {
+    color: rgb(226, 243, 255);
+    font-size: 22px;
+}
+
+nav a.active button{
+    color: rgb(95, 191, 255);
+}
+
+.half-toolbar {
+    display: flex;
+}
+
+#first-half {
+    justify-content: start;
+}
+
+#second-half {
+    justify-content: end;
 }

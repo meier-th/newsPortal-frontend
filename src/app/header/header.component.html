@@ -1,9 +1,17 @@
 <mat-toolbar color="primary">
+  <div class="half-toolbar" id="first-half">
   <span id="name-span">
     News Portal
   </span>
+  <nav><a routerLink="articles" routerLinkActive="active"><button mat-button>Articles</button></a> 
+    <a routerLink="themes" routerLinkActive="active"><button mat-button>Themes</button></a>
+    <a routerLink="authors" routerLinkActive="active"><button mat-button>Authors</button></a>
+  </nav>
+  </div>
+  <div class="half-toolbar" id="second-half">
   <span id="date-span">
     {{currentDate | date: 'dd/MM/yyyy'}}
   </span>
     <button mat-button id="login-button" (click)="loginButtonPressed()">Log in</button>
+    </div>
 </mat-toolbar>
