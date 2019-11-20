@@ -11,6 +11,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material'
 import { MatToolbarModule } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http'
 import { routingComponents } from './app-routing.module';
 
 @NgModule({
@@ -30,6 +31,7 @@ import { routingComponents } from './app-routing.module';
     MatInputModule,
     MatToolbarModule,
     MatPaginatorModule,
+    HttpClientModule,
   ],
   entryComponents: [
     LoginComponent
