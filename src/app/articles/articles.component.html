@@ -1,5 +1,10 @@
 <h3>Sorted by date</h3>
-<mat-paginator [length] = "length"
-[pageSize]="20"
-[pageSizeOptions]="[5, 10, 25]"
-></mat-paginator>
+<div id ="articles-wrapper">
+    <div *ngFor="let article of articles">
+        <h3>{{article.heading}}</h3>
+        <p>
+            {{article.text}}
+        </p>
+        <button mat-button>Expand</button>
+    </div>
+</div>
