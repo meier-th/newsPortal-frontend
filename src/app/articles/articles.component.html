@@ -1,10 +1,10 @@
 <h3>Sorted by date</h3>
 <div id ="articles-wrapper">
-    <div *ngFor="let article of articles">
-        <h3>{{article.heading}}</h3>
-        <p>
+    <div *ngFor="let article of articles" class="article-wrapper">
+        <h2>{{article.heading}}</h2>
+        <p class="article-text">
             {{article.text}}
         </p>
-        <button mat-button>Expand</button>
+        <!--<button mat-button>Expand</button>-->
     </div>
 </div>
