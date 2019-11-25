@@ -4,14 +4,14 @@ import { Comment } from './comment';
 
 export class Article {
 
-    id : Number;
-    heading: String;
-    text : String;
+    id : number;
+    heading: string;
+    text : string;
     author : User;
     dateTime : Date; 
-    views : Number;
-    upVotes : Number;
-    downVotes : Number;
+    views : number;
+    upVotes : number;
+    downVotes : number;
     theme : Theme;
     comments : Comment[];
 

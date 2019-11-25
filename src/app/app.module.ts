@@ -13,6 +13,8 @@ import { MatInputModule } from '@angular/material'
 import { MatToolbarModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http'
 import { routingComponents } from './app-routing.module';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll'; 
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { routingComponents } from './app-routing.module';
     MatToolbarModule,
     MatPaginatorModule,
     HttpClientModule,
+    InfiniteScrollModule,
+    FormsModule,
   ],
   entryComponents: [
     LoginComponent

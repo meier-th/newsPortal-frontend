@@ -3,14 +3,14 @@ import { Theme } from './theme';
 
 export class User {
 
-    login : String;
+    login : string;
     signupDate : Date;
-    enabled : Boolean;
+    enabled : boolean;
     subscribers : User[];
-    email : String;
+    email : string;
     userSubscriptions : User[];
     articles : Article[];
-    rating : Number;
+    rating : number;
     themeSubscriptions : Theme[];
 
 }

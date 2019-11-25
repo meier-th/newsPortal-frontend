@@ -3,12 +3,12 @@ import { User } from './user';
 
 export class Comment {
 
-    id : Number;
-    text : String;
+    id : number;
+    text : string;
     article : Article;
     author : User;
-    upVotes : Number;
-    downVotes : Number;
+    upVotes : number;
+    downVotes : number;
     date : Date;
 
 }

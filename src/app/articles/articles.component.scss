@@ -1,5 +1,21 @@
 .article-wrapper {
     width: 75%;
     margin: auto;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
+}
+
+.arrow-icon {
+    font-size: 30px;
+}
+
+.upvote {
+    color: rgb(10, 255, 84);
+}
+
+.downvote {
+    color: rgb(255, 78, 78);
+}
+
+.views-lbl {
+    color: rgba(200, 200, 200, 0.4);
 }

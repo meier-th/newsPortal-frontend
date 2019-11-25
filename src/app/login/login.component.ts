@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpClient } from '@angular/common/http';
+import { LoginService } from '../services/login.service';
+import { CredentialsService } from '../services/credentials.service';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-login',
@@ -8,9 +10,23 @@ import {HttpClient } from '@angular/common/http';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  private username : string;
+  private password : string;
 
+  constructor(private loginService : LoginService, private credentials : CredentialsService, private dialogRef: MatDialogRef<LoginComponent>) { }
+  
   ngOnInit() {
+  }
+
+  login() {
+    console.log("logging in...");
+    this.loginService.login(this.username, this.password).subscribe(data => {
+      this.credentials.setLogin(this.username);
+      console.log("success");
+      this.dialogRef.close();
+    }, error => {
+      console.log(error);
+    });
   }
 
 }

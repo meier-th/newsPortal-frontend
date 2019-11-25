@@ -3,7 +3,7 @@ import { User } from './user';
 
 export class Theme {
 
-    name : String;
+    name : string;
     articles : Article[];
     subscribers : User[];
 

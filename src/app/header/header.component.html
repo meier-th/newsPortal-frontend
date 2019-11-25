@@ -12,6 +12,10 @@
   <span id="date-span">
     {{currentDate | date: 'dd/MM/yyyy'}}
   </span>
-    <button mat-button id="login-button" (click)="loginButtonPressed()">Log in</button>
+  <span id = "login">
+    {{login}}
+    <button *ngIf="login.length == 0" mat-button id="login-button" (click)="loginButtonPressed()">Log in</button>
+    <button *ngIf="login.length > 0" mat-button id="logout-button" (click)="logoutButtonPressed()">Log out</button>
+    </span>
     </div>
 </mat-toolbar>

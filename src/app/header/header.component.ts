@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
+import { CredentialsService } from '../services/credentials.service';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-header',
@@ -9,12 +11,14 @@ import { LoginComponent } from '../login/login.component';
 })
 export class HeaderComponent implements OnInit {
 
-  currentDate = new Date();
+  private login : string;
+  private currentDate : Date;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(private dialog: MatDialog, private credentials : CredentialsService, private loginService : LoginService) { }
 
   ngOnInit() {
-
+    this.credentials.currentUsername.subscribe(name => this.login = name);
+    this.currentDate = new Date();
   }
 
   loginButtonPressed() {
@@ -26,6 +30,10 @@ export class HeaderComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
     });
+  }
+
+  logoutButtonPressed() { 
+    this.loginService.logout().subscribe(result => {console.log(result); this.credentials.setLogin('');});
   }
 
 }

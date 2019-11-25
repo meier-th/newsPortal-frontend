@@ -13,8 +13,8 @@ import {SortCriteria } from '../model/sort-criteria';
 export class ArticlesComponent implements OnInit {
 
   articles : Article[];
-  currentPage: Number;
-  pageSize : Number;
+  currentPage: number;
+  pageSize : number;
   sortBy : SortCriteria;
 
   constructor(private articleServ : ArticlesService) { }
@@ -22,16 +22,9 @@ export class ArticlesComponent implements OnInit {
   ngOnInit() {
     this.sortBy = SortCriteria.TIME;
     this.currentPage = 0;
-    this.pageSize = 10;
+    this.pageSize = 1;
+    this.articles = [];
     this.loadArticles();
-  }
-
-  changePageSize(newSize : Number) {
-    this.pageSize = newSize;
-  }
-
-  changeCurrentPage(page: Number) {
-    this.currentPage = page;
   }
 
   loadArticles() {
@@ -46,7 +39,20 @@ export class ArticlesComponent implements OnInit {
       case SortCriteria.VIEWS :
         observableResponse = this.articleServ.getPopular(this.currentPage, this.pageSize);
     }
-    observableResponse.subscribe(data => this.articles = data);
+    observableResponse.subscribe(data => {
+      let oldLength = this.articles.length;
+      this.articles = this.articles.concat(data);
+      if (document.getElementById("articles-wrapper").offsetHeight < window.innerHeight && oldLength != this.articles.length) {
+        this.currentPage++;
+        this.loadArticles();
+      }
+      console.log(this.currentPage);
+    });
+  }
+
+  onScroll() {
+    this.currentPage++;
+    this.loadArticles();
   }
 
 }
