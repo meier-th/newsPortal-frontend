@@ -1,3 +1,4 @@
+<section id="loginContent">
 <div color="primary" class="form-container">
     <mat-form-field>
       <input matInput placeholder="Login" [(ngModel)]="username">
@@ -10,4 +11,23 @@
   
 <div class="footer">
   <button mat-button (click)="login()">Login</button>
+  or <button mat-button (click)="toRegistration()">Sign up</button>
 </div>
+</section>
+<section id="registrationContent">
+  <div color="primary" class="from-container">
+    <mat-form-field>
+      <input matInput placeholder="Username" [(ngModel)]="username">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="password" matInput placeholder="password" [(ngModel)]="password">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="password" matInput placeholder="repeat password" [(ngModel)]="repeatPassword">
+    </mat-form-field>
+  </div>
+  <div class="footer">
+    <button mat-button (click)="signUp()">Sign up</button>
+    or <button mat-button (click)="toLogin()">Sign in</button>
+  </div>
+</section>

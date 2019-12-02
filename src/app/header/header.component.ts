@@ -26,14 +26,10 @@ export class HeaderComponent implements OnInit {
       width: '350px',
       data: {}
     });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-    });
   }
 
   logoutButtonPressed() { 
-    this.loginService.logout().subscribe(result => {console.log(result); this.credentials.setLogin('');});
+    this.loginService.logout().subscribe(result => {this.credentials.setLogin('');});
   }
 
 }
