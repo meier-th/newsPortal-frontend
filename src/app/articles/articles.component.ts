@@ -46,7 +46,6 @@ export class ArticlesComponent implements OnInit {
         this.currentPage++;
         this.loadArticles();
       }
-      console.log(this.currentPage);
     });
   }
 

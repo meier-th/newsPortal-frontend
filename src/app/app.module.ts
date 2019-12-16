@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { routingComponents } from './app-routing.module';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll'; 
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { FormsModule } from '@angular/forms';
     InfiniteScrollModule,
     FormsModule,
     MatSnackBarModule,
+    ReactiveFormsModule,
   ],
   entryComponents: [
     LoginComponent

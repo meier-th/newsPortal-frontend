@@ -22,13 +22,21 @@ export class LoginService {
   }
 
   logout() {
-    return this.http.get(serverAddress+'logout');
+    return this.http.get(serverAddress+'logout', {withCredentials: true});
   }
 
   signUp(username: string, password: string) {
     const headers = new HttpHeaders()
             .set("Content-Type", "application/json");
     return this.http.post(serverAddress+'registration', JSON.stringify({username, password}), {headers: headers});
+  }
+
+  checkIfSignedIn(){
+    return this.http.get(serverAddress+'me',
+    {
+      withCredentials: true,
+      responseType: 'text'
+    });
   }
 
 }

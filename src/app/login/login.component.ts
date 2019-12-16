@@ -3,6 +3,7 @@ import { LoginService } from '../services/login.service';
 import { CredentialsService } from '../services/credentials.service';
 import { MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -11,9 +12,16 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class LoginComponent implements OnInit {
 
-  private username : string;
-  private password : string;
-  private repeatPassword : string;
+  loginControl = new FormGroup({
+    username: new FormControl(''),
+    password: new FormControl(''),
+  });
+
+  registerControl = new FormGroup({
+    username: new FormControl(''),
+    password: new FormControl(''),
+    repeatPassword: new FormControl(''),
+  });
 
   constructor(private loginService : LoginService, private credentials : CredentialsService, 
     private dialogRef: MatDialogRef<LoginComponent>, private snackBar : MatSnackBar) { }
@@ -23,8 +31,8 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.loginService.login(this.username, this.password).subscribe(data => {
-      this.credentials.setLogin(this.username);
+    this.loginService.login(this.loginControl.get('username').value, this.loginControl.get('password').value).subscribe(data => {
+      this.credentials.setLogin(this.loginControl.get('username').value);
       this.dialogRef.close();
     }, error => {
       this.snackBar.open('Failed to log in!', 'hide', {duration: 800});
@@ -32,19 +40,19 @@ export class LoginComponent implements OnInit {
   }
 
   signUp() {
-    if (this.repeatPassword != this.password) {
+    if (this.registerControl.get('password').value != this.registerControl.get('repeatPassword').value) {
       this.snackBar.open('Passwords do not match', 'hide', {duration: 800});
     }
     else {
-      this.loginService.signUp(this.username, this.password).subscribe(response => {
-        this.loginService.login(this.username, this.password).subscribe(response => {
-          this.credentials.setLogin(this.username);
+      this.loginService.signUp(this.registerControl.get('username').value, this.registerControl.get('password').value).subscribe(response => {
+        this.loginService.login(this.registerControl.get('username').value, this.registerControl.get('password').value).subscribe(response => {
+          this.credentials.setLogin(this.registerControl.get('username').value);
           this.dialogRef.close();
         }, error => {
           this.dialogRef.close();
         });
       }, error => {
-        this.snackBar.open('Username '+this.username+' is occupied.', 'hide', {duration: 800});
+        this.snackBar.open('Username '+this.registerControl.get('username').value+' is occupied.', 'hide', {duration: 800});
       });
   }
   }

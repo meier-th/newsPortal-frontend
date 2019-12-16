@@ -17,6 +17,7 @@ export class HeaderComponent implements OnInit {
   constructor(private dialog: MatDialog, private credentials : CredentialsService, private loginService : LoginService) { }
 
   ngOnInit() {
+    this.loginService.checkIfSignedIn().subscribe(result => this.credentials.setLogin(result));
     this.credentials.currentUsername.subscribe(name => this.login = name);
     this.currentDate = new Date();
   }
