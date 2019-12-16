@@ -5,8 +5,8 @@
         <p class="article-text">
             {{article.text}}
         </p>
-        <button mat-button>{{article.upVotes}}<span class="arrow-icon upvote">⤴</span></button>
-        <button mat-button>{{article.downVotes}}<span class="arrow-icon downvote">⤵</span></button>
+        <button mat-button (click)="upvote(article)">{{article.upVotes}}<span class="arrow-icon upvote">⤴</span></button>
+        <button mat-button (click)="downvote(article)">{{article.downVotes}}<span class="arrow-icon downvote">⤵</span></button>
         <label class="views-lbl">{{article.views}}👁</label>
         <!--<button mat-button>Expand</button>-->
     </div>

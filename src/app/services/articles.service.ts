@@ -45,13 +45,13 @@ export class ArticlesService {
   upvote(articleId : number) {
     let url = serverAddress + 'logged/upvote/article';
     let parameters = new HttpParams().append('articleId', articleId.toString());
-    return this.http.post<string>(url, {params: parameters});
+    return this.http.get<string>(url, {params: parameters, withCredentials: true});
   }
 
   downvote(articleId: number) {
     let url = serverAddress + 'logged/downvote/article';
     let parameters = new HttpParams().append('articleId', articleId.toString());
-    return this.http.post<string>(url, {params: parameters});
+    return this.http.get<string>(url, {params: parameters, withCredentials: true});
   }
 
   view(articleId: number) {

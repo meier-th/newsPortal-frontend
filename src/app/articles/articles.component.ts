@@ -54,4 +54,16 @@ export class ArticlesComponent implements OnInit {
     this.loadArticles();
   }
 
+  upvote(article : Article) {
+    this.articleServ.upvote(article.id).subscribe(result => {
+      article.upVotes++;
+    });
+  }
+
+  downvote(article: Article) {
+    this.articleServ.downvote(article.id).subscribe(result => {
+      article.downVotes++;
+    });
+  }
+
 }
