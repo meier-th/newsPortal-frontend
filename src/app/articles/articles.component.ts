@@ -16,6 +16,7 @@ export class ArticlesComponent implements OnInit {
   currentPage: number;
   pageSize : number;
   sortBy : SortCriteria;
+  sortingCriterias: string[] = ['date', 'upvotes', 'views'];
 
   constructor(private articleServ : ArticlesService) { }
 

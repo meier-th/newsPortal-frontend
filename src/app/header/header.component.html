@@ -6,6 +6,8 @@
   <nav><a routerLink="articles" routerLinkActive="active"><button mat-button>Articles</button></a> 
     <a routerLink="themes" routerLinkActive="active"><button mat-button>Themes</button></a>
     <a routerLink="authors" routerLinkActive="active"><button mat-button>Authors</button></a>
+    <a *ngIf="login.length > 0" routerLink="write" routerLinkActive="active"><button mat-button>Write an article</button></a>
+    <a *ngIf="login.length > 0" routerLink="drafts" routerLinkActive="active"><button mat-button>Drafts</button></a>
   </nav>
   </div>
   <div class="half-toolbar" id="second-half">

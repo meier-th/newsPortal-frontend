@@ -11,18 +11,25 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material'
 import { MatToolbarModule } from '@angular/material';
+import {MatSelectModule} from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http'
 import { routingComponents } from './app-routing.module';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll'; 
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgxEditorModule } from 'ngx-editor';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { WriteComponent } from './write/write.component';
+import { DraftsComponent } from './drafts/drafts.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     LoginComponent,
-    routingComponents
+    routingComponents,
+    WriteComponent,
+    DraftsComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +46,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     MatSnackBarModule,
     ReactiveFormsModule,
+    NgxEditorModule,
+    AngularFontAwesomeModule,
+    MatSelectModule,
   ],
   entryComponents: [
     LoginComponent

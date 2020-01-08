@@ -1,4 +1,11 @@
-<h3>Sorted by date</h3>
+<mat-form-field>
+    <mat-label>Sorted by</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let criteria of sortingCriterias" [value]="criteria">
+        {{criteria}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 <div infiniteScroll [infiniteScrollThrottle]="50" (scrolled)="onScroll()" id ="articles-wrapper">
     <div *ngFor="let article of articles" class="article-wrapper">
         <h2>{{article.heading}}</h2>
